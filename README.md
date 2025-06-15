@@ -38,8 +38,6 @@ How to Use
 
     Run the Application:
     Open a terminal or command prompt, navigate to the directory where you saved main.py, and run:
-    Bash
-
     python main.py
 
     Select yt-dlp.exe Directory:
