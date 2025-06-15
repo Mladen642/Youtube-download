@@ -4,17 +4,17 @@ import subprocess
 import os
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 
-from blueprint import Ui_MainWindow  # Import your UI class
+from blueprint import Ui_MainWindow 
 
 class YouTubeDownloader(QMainWindow):
     def __init__(self):
         super().__init__()
         
-        # Set up the UI
+        #init
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         
-        #Calculate buttons
+        #button_connections
         self.ui.directory_browse.clicked.connect(self.browse) 
         self.ui.go_audio.clicked.connect(self.audio)
         self.ui.destination.clicked.connect(self.destination)
@@ -46,19 +46,17 @@ class YouTubeDownloader(QMainWindow):
 
         try:
             os.chdir(x)
-            
-            # Using shell=True for complex commands
             process = subprocess.Popen(f'{command}', 
-                shell=True, 
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                encoding='utf-8',
-                errors='replace')
+            shell=True, 
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            encoding='utf-8',
+            errors='replace')
             
             for line in process.stdout:
                 self.ui.result_label.setText(f'{line}')
-                QApplication.processEvents() # Process events to update GUI
+                QApplication.processEvents() #gui_refresh
             
             self.ui.result_label.setText(f'Done!\nFile(s) saved at {x}')
             
@@ -87,7 +85,6 @@ class YouTubeDownloader(QMainWindow):
         try:
             os.chdir(x)
             
-            # Using shell=True for complex commands
             process = subprocess.Popen(f'{command}', 
                 shell=True, 
                 stdout=subprocess.PIPE,
@@ -98,7 +95,7 @@ class YouTubeDownloader(QMainWindow):
             
             for line in process.stdout:
                 self.ui.result_label.setText(f'{line}')
-                QApplication.processEvents() # Process events to update GUI
+                QApplication.processEvents() # gui_refresh
             
             self.ui.result_label.setText(f'Done!\nFile(s) saved at {x}')
             
@@ -113,12 +110,7 @@ class YouTubeDownloader(QMainWindow):
             
             
 if __name__ == "__main__":
-    """Main function to run the application"""
     app = QApplication(sys.argv)
-    
-    # Create and show the main window
     window = YouTubeDownloader()
     window.show()
-    
-    # Run the application
     sys.exit(app.exec())
