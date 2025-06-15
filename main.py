@@ -47,12 +47,12 @@ class YouTubeDownloader(QMainWindow):
         try:
             os.chdir(x)
             process = subprocess.Popen(f'{command}', 
-            shell=True, 
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            encoding='utf-8',
-            errors='replace')
+                shell=True, 
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                encoding='utf-8',
+                errors='replace')
             
             for line in process.stdout:
                 self.ui.result_label.setText(f'{line}')
