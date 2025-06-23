@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'blueprintHtWBhF.ui'
+## Form generated from reading UI file 'blueprintHXeXHR.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.2
 ##
@@ -106,10 +106,10 @@ class Ui_MainWindow(object):
         self.result_label = QLabel(self.centralwidget)
         self.result_label.setObjectName(u"result_label")
         self.result_label.setGeometry(QRect(10, 220, 461, 51))
-        self.destination = QPushButton(self.centralwidget)
-        self.destination.setObjectName(u"destination")
-        self.destination.setGeometry(QRect(480, 233, 75, 31))
-        self.destination.setStyleSheet(u"background-color: rgb(60, 60, 60);\n"
+        self.open_destination = QPushButton(self.centralwidget)
+        self.open_destination.setObjectName(u"open_destination")
+        self.open_destination.setGeometry(QRect(480, 233, 75, 31))
+        self.open_destination.setStyleSheet(u"background-color: rgb(60, 60, 60);\n"
 "border-radius: 5px; ")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
@@ -143,6 +143,6 @@ class Ui_MainWindow(object):
         self.go_video.setText(QCoreApplication.translate("MainWindow", u"Go", None))
         self.playlist_check_video.setText(QCoreApplication.translate("MainWindow", u"Playlist", None))
         self.result_label.setText("")
-        self.destination.setText(QCoreApplication.translate("MainWindow", u"Destination", None))
+        self.open_destination.setText(QCoreApplication.translate("MainWindow", u"Destination", None))
     # retranslateUi
 
